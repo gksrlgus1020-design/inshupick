@@ -3,6 +3,23 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 60% 14%;
+    --primary: 215 60% 14%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 215 60% 14%;
+    --muted: 220 20% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 220 20% 92%;
+    --accent-foreground: 215 60% 14%;
+    --ring: 215 60% 14%;
+    --input: 220 20% 88%;
+    --radius: 0.5rem;
+    --ring-offset-background: 0 0% 100%;
+  }
+
   html {
     scroll-behavior: smooth;
   }

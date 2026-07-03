@@ -1,4 +1,4 @@
-import HeroSlider from '@/components/HeroSlider'
+import { AnimatedHero } from '@/components/ui/animated-hero'
 import ProductCard from '@/components/ProductCard'
 import TrustSection from '@/components/TrustSection'
 import CTASection from '@/components/CTASection'
@@ -9,8 +9,8 @@ export default function HomePage() {
 
   return (
     <>
-      {/* 히어로 슬라이더 */}
-      <HeroSlider products={products} />
+      {/* 애니메이션 히어로 */}
+      <AnimatedHero />
 
       {/* 이달의 추천 상품 */}
       <section id="products" className="py-14 bg-[#F4F7FF]">
