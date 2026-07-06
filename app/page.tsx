@@ -2,6 +2,10 @@ import { AnimatedHero } from '@/components/ui/animated-hero'
 import ProductCard from '@/components/ProductCard'
 import TrustSection from '@/components/TrustSection'
 import CTASection from '@/components/CTASection'
+import LogoMarquee from '@/components/LogoMarquee'
+import HowItWorks from '@/components/HowItWorks'
+import Testimonials from '@/components/Testimonials'
+import FAQSection from '@/components/FAQSection'
 import { FadeIn } from '@/components/ui/fade-in'
 import { getFeaturedProducts } from '@/data/products'
 
@@ -10,10 +14,11 @@ export default function HomePage() {
 
   return (
     <>
+      {/* 히어로 */}
       <AnimatedHero />
 
-      {/* 구분선 */}
-      <div className="h-px bg-border" />
+      {/* 제휴 보험사 마퀴 */}
+      <LogoMarquee />
 
       {/* 추천 상품 */}
       <section id="products" className="py-24 bg-surface">
@@ -38,7 +43,19 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 3단계 프로세스 */}
+      <HowItWorks />
+
+      {/* 실제 후기 */}
+      <Testimonials />
+
+      {/* 왜 인슈픽인가 */}
       <TrustSection />
+
+      {/* FAQ */}
+      <FAQSection />
+
+      {/* CTA */}
       <CTASection />
     </>
   )

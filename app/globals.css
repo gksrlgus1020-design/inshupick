@@ -58,6 +58,18 @@
   }
 }
 
+/* 마퀴 애니메이션 */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 /* 스크롤 페이드인 */
 .fade-in {
   opacity: 0;
