@@ -1,3 +1,5 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,16 +7,16 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 60% 14%;
-    --primary: 215 60% 14%;
+    --foreground: 270 60% 8%;
+    --primary: 263 73% 58%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 20% 96%;
-    --secondary-foreground: 215 60% 14%;
-    --muted: 220 20% 96%;
+    --secondary: 263 100% 97%;
+    --secondary-foreground: 270 60% 8%;
+    --muted: 263 20% 96%;
     --muted-foreground: 215 16% 47%;
-    --accent: 220 20% 92%;
-    --accent-foreground: 215 60% 14%;
-    --ring: 215 60% 14%;
+    --accent: 263 20% 92%;
+    --accent-foreground: 270 60% 8%;
+    --ring: 263 73% 58%;
     --input: 220 20% 88%;
     --radius: 0.5rem;
     --ring-offset-background: 0 0% 100%;
@@ -23,8 +25,10 @@
   html {
     scroll-behavior: smooth;
   }
+
   body {
-    @apply text-gray-900;
+    @apply text-[#0F0A1E] antialiased;
+    font-family: 'Pretendard Variable', 'Apple SD Gothic Neo', '맑은 고딕', sans-serif;
   }
 }
 
@@ -32,12 +36,43 @@
   .text-balance {
     text-wrap: balance;
   }
-  .animate-fade-in {
-    animation: fadeIn 0.15s ease-out;
+
+  .mesh-bg {
+    background-color: #ffffff;
+    background-image:
+      radial-gradient(at 15% 20%, rgba(124, 58, 237, 0.18) 0px, transparent 55%),
+      radial-gradient(at 85% 8%,  rgba(249, 115, 22, 0.13) 0px, transparent 50%),
+      radial-gradient(at 60% 80%, rgba(236, 72, 153, 0.12) 0px, transparent 50%),
+      radial-gradient(at 5%  75%, rgba(99, 102, 241, 0.14) 0px, transparent 45%),
+      radial-gradient(at 92% 60%, rgba(20, 184, 166, 0.09) 0px, transparent 40%),
+      radial-gradient(at 45% 45%, rgba(167, 139, 250, 0.08) 0px, transparent 50%);
+  }
+
+  .mesh-bg-subtle {
+    background-color: #FAFAFE;
+    background-image:
+      radial-gradient(at 10% 20%, rgba(124, 58, 237, 0.08) 0px, transparent 55%),
+      radial-gradient(at 90% 15%, rgba(249, 115, 22, 0.06) 0px, transparent 50%),
+      radial-gradient(at 60% 85%, rgba(236, 72, 153, 0.06) 0px, transparent 50%),
+      radial-gradient(at 5%  80%, rgba(99, 102, 241, 0.07) 0px, transparent 45%);
   }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
+/* 스크롤 페이드인 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
