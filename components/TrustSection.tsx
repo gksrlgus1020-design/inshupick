@@ -9,6 +9,7 @@ const TRUST_ITEMS = [
     ),
     title: '안전한 보장 분석',
     desc: '불필요한 특약 없이 꼭 필요한 보장만 설계해드립니다. 기존 보험 검토도 무료로 진행합니다.',
+    gradient: 'from-violet-DEFAULT to-violet-mid',
   },
   {
     icon: (
@@ -19,6 +20,7 @@ const TRUST_ITEMS = [
     ),
     title: '합리적인 보험료',
     desc: '여러 보험사 상품을 동시에 비교해 같은 보장을 더 저렴하게 가입할 수 있도록 도와드립니다.',
+    gradient: 'from-pink-brand to-orange-brand',
   },
   {
     icon: (
@@ -29,6 +31,7 @@ const TRUST_ITEMS = [
     ),
     title: '전문 설계사 직접 상담',
     desc: '콜센터가 아닌 담당 설계사가 처음부터 끝까지 직접 책임지고 상담해드립니다.',
+    gradient: 'from-blue-500 to-violet-DEFAULT',
   },
 ]
 

@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import FloatingButtons from '@/components/FloatingButtons'
 import MetaPixel from '@/components/MetaPixel'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://inshupick.kr'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.inshupick.kr'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

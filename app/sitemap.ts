@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getAllSlugs } from '@/lib/blog'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://inshupick.kr'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.inshupick.kr'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const slugs = getAllSlugs()
