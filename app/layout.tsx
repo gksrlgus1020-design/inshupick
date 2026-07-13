@@ -4,8 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import FloatingButtons from '@/components/FloatingButtons'
 import MetaPixel from '@/components/MetaPixel'
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.inshupick.kr'
+import { SITE_URL } from '@/lib/site-config'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -22,7 +21,6 @@ export const metadata: Metadata = {
     siteName: '인슈픽',
     title: '인슈픽 | 내 보험을 숫자로 진단하는 곳',
     description: '내 사망보장의 진짜 가치, 30초면 확인됩니다.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '인슈픽' }],
   },
   twitter: {
     card: 'summary_large_image',

@@ -2,9 +2,10 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/blog'
 import { FadeIn } from '@/components/ui/fade-in'
+import { AGENT } from '@/lib/site-config'
 
 export const metadata: Metadata = {
-  title: '인슈픽 | 내 보험을 숫자로 진단하는 곳',
+  title: { absolute: '인슈픽 | 내 보험을 숫자로 진단하는 곳' },
   description: '2010년의 1억과 지금의 1억은 다릅니다. 내 사망보장의 진짜 가치, 30초면 확인됩니다.',
 }
 
@@ -78,8 +79,8 @@ export default function HomePage() {
                 </svg>
               </div>
               <div className="flex-1">
-                <p className="font-extrabold text-ink text-[17px]">홍길동</p>
-                <p className="text-[14px] text-ink-2 mt-0.5">등록번호 제2024-서울-000000호 · 인슈픽파트너스</p>
+                <p className="font-extrabold text-ink text-[17px]">{AGENT.name}</p>
+                <p className="text-[14px] text-ink-2 mt-0.5">{AGENT.certLine}</p>
                 <p className="text-[14px] text-ink-2 mt-3 leading-relaxed">
                   특정 보험사에 소속되지 않아, 특정 상품을 권할 이유가 없습니다.
                 </p>

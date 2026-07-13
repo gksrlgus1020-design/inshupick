@@ -52,9 +52,9 @@ export default function Footer() {
             보험상품의 세부 내용은 상담 시 상품설명서 및 가입설계서를 통해 확인하시기 바랍니다.
           </p>
           <p>
-            홍길동 &nbsp;|&nbsp; 등록번호 제2024-서울-000000호 &nbsp;|&nbsp; 소속 인슈픽파트너스
+            한기현 &nbsp;|&nbsp; 우수인증 설계사/대리점 · 인증번호 2026-26071
           </p>
-          <p>© 2025 인슈픽. All rights reserved.</p>
+          <p>© 2026 인슈픽. All rights reserved.</p>
         </div>
       </div>
     </footer>

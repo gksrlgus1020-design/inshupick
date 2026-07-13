@@ -37,7 +37,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    author: { '@type': 'Person', name: '홍길동' },
+    author: { '@type': 'Person', name: '한기현' },
     publisher: { '@type': 'Organization', name: '인슈픽' },
   }
 

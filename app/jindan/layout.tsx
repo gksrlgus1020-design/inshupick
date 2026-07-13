@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: '보장가치 진단 | 인슈픽',
+  title: '보장가치 진단',
   description: '내 사망보험금의 실질 가치를 30초 만에 확인해보세요. 통계청 소비자물가지수 기준 무료 진단.',
 }
 

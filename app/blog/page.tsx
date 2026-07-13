@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { getAllPosts } from '@/lib/blog'
 
 export const metadata: Metadata = {
-  title: '보험 이야기 블로그 | 인슈픽',
+  title: '보험 이야기',
   description: '보장 분석, 보험 상식, 노후 준비에 관한 실용적인 정보를 전달합니다.',
 }
 

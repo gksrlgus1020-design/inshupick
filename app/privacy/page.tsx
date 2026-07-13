@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: '개인정보처리방침 | 인슈픽',
+  title: '개인정보처리방침',
   description: '인슈픽 개인정보 수집·이용·보관에 관한 처리방침입니다.',
   robots: { index: false },
 }
@@ -17,7 +17,7 @@ export default function PrivacyPage() {
       </Link>
 
       <h1 className="text-[28px] font-extrabold text-ink mb-2">개인정보처리방침</h1>
-      <p className="text-[14px] text-ink-2 mb-10">최종 업데이트: 2025년 1월</p>
+      <p className="text-[14px] text-ink-2 mb-10">최종 업데이트: 2026년 7월</p>
 
       <div className="space-y-10 text-[15px] text-ink-2 leading-[1.85]">
 
@@ -84,9 +84,8 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-[17px] font-extrabold text-ink mb-3">6. 개인정보 보호책임자</h2>
           <div className="bg-surface rounded-2xl p-5">
-            <p><strong className="text-ink">성명:</strong> 홍길동</p>
-            <p><strong className="text-ink">소속:</strong> 인슈픽파트너스</p>
-            <p><strong className="text-ink">등록번호:</strong> 제2024-서울-000000호</p>
+            <p><strong className="text-ink">성명:</strong> 한기현</p>
+            <p><strong className="text-ink">인증:</strong> 우수인증 설계사/대리점 · 인증번호 2026-26071</p>
             <p className="mt-2"><strong className="text-ink">연락처:</strong>{' '}
               <Link href="/jindan" className="text-orange-brand hover:underline">상담 신청 페이지</Link>를 통해 문의해주세요. (placeholder — 실제 연락처로 교체 필요)
             </p>

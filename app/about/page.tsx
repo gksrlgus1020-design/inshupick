@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { AGENT } from '@/lib/site-config'
 
 export const metadata: Metadata = {
-  title: '설계사 소개 | 인슈픽',
-  description: '인슈픽 홍길동 설계사의 상담 철학과 프로세스를 소개합니다.',
+  title: '설계사 소개',
+  description: '인슈픽 한기현 설계사의 상담 철학과 프로세스를 소개합니다.',
 }
 
 const STEPS = [
@@ -38,9 +39,8 @@ export default function AboutPage() {
           </svg>
         </div>
         <div>
-          <h1 className="text-[28px] font-extrabold text-ink">홍길동</h1>
-          <p className="text-[15px] text-ink-2 mt-1">등록번호 제2024-서울-000000호</p>
-          <p className="text-[15px] text-ink-2">인슈픽파트너스</p>
+          <h1 className="text-[28px] font-extrabold text-ink">{AGENT.name}</h1>
+          <p className="text-[15px] text-ink-2 mt-1">{AGENT.certLine}</p>
         </div>
       </div>
 

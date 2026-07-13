@@ -349,8 +349,8 @@ export default function JindanPage() {
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="1.5"><circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" /></svg>
                     </div>
                     <div>
-                      <p className="font-bold text-ink text-[15px]">홍길동 설계사</p>
-                      <p className="text-[13px] text-ink-2">인슈픽파트너스 · 등록번호 제2024-서울-000000호</p>
+                      <p className="font-bold text-ink text-[15px]">한기현 설계사</p>
+                      <p className="text-[13px] text-ink-2">우수인증 설계사/대리점 · 인증번호 2026-26071</p>
                     </div>
                   </div>
                 </div>
@@ -365,7 +365,7 @@ export default function JindanPage() {
                     <label className="block text-[15px] font-semibold text-ink mb-2">이름 <span className="text-orange-brand">*</span></label>
                     <input
                       type="text"
-                      placeholder="홍길동"
+                      placeholder="이름"
                       value={form.name}
                       onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                       className="w-full px-4 py-3.5 text-[16px] border border-border rounded-2xl focus:outline-none focus:ring-2 focus:ring-ink/20 focus:border-ink transition-all placeholder:text-ink-2/40"
