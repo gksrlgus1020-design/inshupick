@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://inshupick.kr'
+export const SITE_URL = 'https://www.inshupick.kr'
 
 export const AGENT = {
   name: '한기현',
