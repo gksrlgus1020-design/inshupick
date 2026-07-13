@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
-  other: {
-    'naver-site-verification': '4a87b9289e7b30914ec5c1af5e2023f9ca9646b9',
-  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
+      <head>
+        <meta name="naver-site-verification" content="4a87b9289e7b30914ec5c1af5e2023f9ca9646b9" />
+      </head>
       <body className="bg-white font-sans antialiased">
         <MetaPixel />
         <Header />
