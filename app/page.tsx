@@ -47,6 +47,33 @@ export default function HomePage() {
 
       <div className="h-px bg-border" />
 
+      {/* ── 펫보험 배너 ── */}
+      <section className="bg-ink px-6 py-9">
+        <FadeIn>
+          <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="flex-1 min-w-0">
+              <p className="text-[20px] sm:text-[22px] font-extrabold text-white mb-2 text-balance leading-snug">
+                🐾 반려동물 100마리 중 97마리는 보험이 없습니다
+              </p>
+              <p className="text-[14px] text-white/60 leading-relaxed mb-2">
+                아프고 나면 가입이 어렵습니다. 건강할 때가 준비할 수 있는 유일한 시기입니다.
+              </p>
+              <p className="text-[11px] text-white/35">
+                국내 반려견·반려묘 펫보험 가입률 3.2%, 보험연구원(2025년 말 기준)
+              </p>
+            </div>
+            <Link
+              href="/pet"
+              className="w-full sm:w-auto flex-shrink-0 bg-orange-brand text-white px-7 py-4 rounded-2xl font-bold text-[16px] text-center hover:bg-orange-hover transition-colors whitespace-nowrap"
+            >
+              우리 아이 상담 신청하기 →
+            </Link>
+          </div>
+        </FadeIn>
+      </section>
+
+      <div className="h-px bg-border" />
+
       {/* ── 신뢰 섹션 — 4단계 프로세스 ── */}
       <section className="py-20 bg-white px-6">
         <div className="max-w-4xl mx-auto">
@@ -91,29 +118,6 @@ export default function HomePage() {
       </section>
 
       <div className="h-px bg-border" />
-
-      {/* ── 펫보험 배너 ── */}
-      <section className="bg-ink px-6 py-10">
-        <FadeIn>
-          <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div>
-              <p className="text-[13px] font-bold tracking-widest text-orange-brand uppercase mb-2">PET INSURANCE</p>
-              <h2 className="text-[22px] sm:text-[26px] font-extrabold text-white mb-2 text-balance">
-                반려동물 키우고 계신가요?
-              </h2>
-              <p className="text-[15px] text-white/60 leading-relaxed">
-                치료비 부담, 건강할 때 미리 준비하세요
-              </p>
-            </div>
-            <Link
-              href="/pet"
-              className="w-full sm:w-auto flex-shrink-0 bg-orange-brand text-white px-8 py-4 rounded-2xl font-bold text-[16px] text-center hover:bg-orange-hover transition-colors"
-            >
-              펫보험 상담 알아보기 →
-            </Link>
-          </div>
-        </FadeIn>
-      </section>
 
       {/* ── 최신 블로그 글 ── */}
       {posts.length > 0 && (

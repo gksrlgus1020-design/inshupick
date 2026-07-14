@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 const NAV_LINKS = [
   { href: '/jindan', label: '보장 진단' },
+  { href: '/pet', label: '펫보험' },
   { href: '/blog', label: '블로그' },
   { href: '/about', label: '설계사 소개' },
 ]
