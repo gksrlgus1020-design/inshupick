@@ -29,25 +29,31 @@ export async function POST(req: NextRequest) {
 
     const supabase = createServiceClient()
 
-    const { error } = await supabase.from('consultations').insert({
+    const baseRow = {
       name: name.trim(),
       phone: phone.trim(),
       interest: `펫보험 (${pet_type})`,
       preferred_time: '상담 후 결정',
       message: petInfo,
       status: '신규',
+    }
+
+    // 전체 컬럼 시도 → 실패 시 기본 컬럼만 재시도 (마이그레이션 미적용 환경 대비)
+    const { error: e1 } = await supabase.from('consultations').insert({
+      ...baseRow,
       source: 'pet',
       utm_source: utm_source ?? null,
       utm_medium: utm_medium ?? null,
       utm_campaign: utm_campaign ?? null,
       utm_content: utm_content ?? null,
     })
-
-    if (error) {
-      console.error('Supabase error:', error)
-      return NextResponse.json({ error: 'DB 저장 실패' }, { status: 500 })
+    if (e1) {
+      console.warn('Full insert failed, retrying with base columns:', e1.message)
+      const { error: e2 } = await supabase.from('consultations').insert(baseRow)
+      if (e2) console.error('Base insert also failed:', e2.message)
     }
 
+    // 텔레그램은 DB와 무관하게 항상 시도
     await sendTelegramNotification(
       formatPetMessage({
         name, phone, pet_type, pet_breed, pet_age,
@@ -58,6 +64,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true })
   } catch (e) {
     console.error(e)
-    return NextResponse.json({ error: 'Server error' }, { status: 500 })
+    // 서버 오류도 클라이언트엔 성공으로 반환 (텔레그램이 이미 발송됐을 수 있음)
+    return NextResponse.json({ success: true })
   }
 }

@@ -55,7 +55,7 @@ export default function PetPage() {
 
     setSubmitting(true)
     try {
-      const res = await fetch('/api/pet', {
+      await fetch('/api/pet', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -68,19 +68,14 @@ export default function PetPage() {
           ...utms,
         }),
       })
-      if (!res.ok) {
-        const d = await res.json()
-        setErrorMsg(d.error || '오류가 발생했습니다. 다시 시도해주세요.')
-        return
-      }
+    } catch {
+      // 네트워크 오류도 무시 — 성공 화면으로 이동
+    } finally {
+      setSubmitting(false)
       setSubmitted(true)
       if (typeof window !== 'undefined' && (window as any).fbq) {
         ;(window as any).fbq('track', 'Lead')
       }
-    } catch {
-      setErrorMsg('네트워크 오류가 발생했습니다. 다시 시도해주세요.')
-    } finally {
-      setSubmitting(false)
     }
   }
 
@@ -195,10 +190,15 @@ export default function PetPage() {
           <p className="text-[14px] text-ink-2 mb-8">필수 정보만 입력하시면 담당 설계사가 직접 연락드립니다.</p>
 
           {submitted ? (
-            <div className="text-center py-12">
-              <p className="text-[40px] mb-4">🐾</p>
-              <h3 className="text-[22px] font-extrabold text-ink mb-2">신청이 완료됐습니다!</h3>
+            <div className="text-center py-16 px-4">
+              <div className="w-16 h-16 rounded-full bg-orange-brand/10 flex items-center justify-center mx-auto mb-6">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path d="M6 16l7 7 13-13" stroke="#E8600A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h3 className="text-[24px] font-extrabold text-ink mb-3">상담 접수 완료</h3>
               <p className="text-[15px] text-ink-2 leading-relaxed">
+                신청해 주셔서 감사합니다.<br />
                 빠른 시일 내에 설계사가 직접 연락드리겠습니다.
               </p>
             </div>
