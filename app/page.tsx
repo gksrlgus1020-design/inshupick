@@ -92,6 +92,29 @@ export default function HomePage() {
 
       <div className="h-px bg-border" />
 
+      {/* ── 펫보험 배너 ── */}
+      <section className="bg-ink px-6 py-10">
+        <FadeIn>
+          <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <p className="text-[13px] font-bold tracking-widest text-orange-brand uppercase mb-2">PET INSURANCE</p>
+              <h2 className="text-[22px] sm:text-[26px] font-extrabold text-white mb-2 text-balance">
+                반려동물 키우고 계신가요?
+              </h2>
+              <p className="text-[15px] text-white/60 leading-relaxed">
+                치료비 부담, 건강할 때 미리 준비하세요
+              </p>
+            </div>
+            <Link
+              href="/pet"
+              className="w-full sm:w-auto flex-shrink-0 bg-orange-brand text-white px-8 py-4 rounded-2xl font-bold text-[16px] text-center hover:bg-orange-hover transition-colors"
+            >
+              펫보험 상담 알아보기 →
+            </Link>
+          </div>
+        </FadeIn>
+      </section>
+
       {/* ── 최신 블로그 글 ── */}
       {posts.length > 0 && (
         <section className="py-20 bg-surface px-6">
