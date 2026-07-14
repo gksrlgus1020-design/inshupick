@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import FloatingButtons from '@/components/FloatingButtons'
 import MetaPixel from '@/components/MetaPixel'
+import RootShell from '@/components/RootShell'
 import { SITE_URL } from '@/lib/site-config'
 
 export const metadata: Metadata = {
@@ -42,10 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-white font-sans antialiased">
         <MetaPixel />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <FloatingButtons />
+        <RootShell>{children}</RootShell>
       </body>
     </html>
   )

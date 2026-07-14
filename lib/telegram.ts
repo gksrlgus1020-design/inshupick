@@ -1,5 +1,34 @@
 import { formatKRW } from './inflation'
 
+export function formatPetMessage(data: {
+  name: string
+  phone: string
+  pet_type: string
+  pet_breed?: string | null
+  pet_age: string
+  pet_medical_history: string
+  utm_source?: string | null
+  utm_campaign?: string | null
+}): string {
+  const time = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })
+  const icon = data.pet_type === '강아지' ? '🐕' : '🐈'
+  const breedLine = data.pet_breed ? ` (${data.pet_breed})` : ''
+  const utmLine =
+    data.utm_source || data.utm_campaign
+      ? `\n📣 utm: ${[data.utm_source, data.utm_campaign].filter(Boolean).join(' / ')}`
+      : ''
+
+  return `🐾 <b>[펫보험] 새 상담 신청</b>
+
+👤 보호자: ${data.name}
+📞 연락처: ${data.phone}
+${icon} 반려동물: ${data.pet_type}${breedLine}
+📅 나이: ${data.pet_age}
+🏥 병력: ${data.pet_medical_history}${utmLine}
+
+🕐 신청 시간: ${time}`
+}
+
 export async function sendTelegramNotification(text: string): Promise<void> {
   const token = process.env.TELEGRAM_BOT_TOKEN
   const chatId = process.env.TELEGRAM_CHAT_ID
